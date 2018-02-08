@@ -6,11 +6,8 @@ var dvdButton = document.getElementById("dvd");
 var context = canvas.getContext('2d');
 var frame;
 var increment = 1;
-var radius = 1;
 var dx = 2;
 var dy = 2;
-var x = 20 + Math.random() * (canvas.width - 40);
-var y = 20 +  Math.random() * (canvas.height - 40);
 
 context.lineWidth = 5; 
 context.fillStyle = "red";
@@ -28,6 +25,7 @@ var clear = function(){
 }
 
 var animateGrow = function(){
+    var radius = 1;
     var checkBounds = function(){
         if (radius == canvas.width/2 || radius == canvas.height/2 || radius == 0){
             increment *= -1;
@@ -49,6 +47,8 @@ var animateGrow = function(){
 }
 
 var animateDVD = function(){
+    var x = 20 + Math.random() * (canvas.width - 40);
+    var y = 20 +  Math.random() * (canvas.height - 40); 
     var checkBounds = function(){
         if (x-20 <= 0 || x + 20 >= canvas.width){
             dx *=-1;
